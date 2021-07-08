@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 
+
+app.set('view engine', 'pug');
+
 app.get('/', (req, res) =>{
-    res.send('Hello express');
+    res.render('index',{name: 'ali',surname:"yıldızöz"});
 });
 
 app.listen(3000,()=>{
