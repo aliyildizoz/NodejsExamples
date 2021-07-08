@@ -1,5 +1,23 @@
 html 
     head 
-        tittle Merhaba pug
+        title Merhaba pug
     body 
-        | Merhaba              
+        //- =surname
+        - var  school="Sakarya Üniversitesi"
+        - var  city="Sakarya"
+        =school
+        hr
+        =city 
+        hr
+        span(style="color: white; background-color: black;") Merhaba #{name.toLowerCase()}             
+        hr
+
+        - var number=1
+        if !number
+            | Number değişkeni yok 
+        else if number===12
+            | Sayı 12
+        else 
+            | Sayı 12 değil        
+        hr
+        include footer
