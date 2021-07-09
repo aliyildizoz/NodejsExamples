@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/signUp", (req, res) => {
+router.get("/", (req, res) => {
 
   res.send("signUp sayfası");
 });
-router.post("/signUp", (req, res) => {
+router.post("/", (req, res) => {
   res.send("signUp  (POST Method)");
 });
 
