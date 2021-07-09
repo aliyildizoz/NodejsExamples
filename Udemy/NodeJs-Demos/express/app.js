@@ -4,15 +4,10 @@ const app = express();
 const signIn = require("./routes/signin");
 const signUp = require("./routes/signup");
 
-app.use((req, res, next) => {
-  const isLogin = true;  
-  if (isLogin) {
-    next();
-  } else {
-    res.send("Lütfen giriş yapın");
-  }
-});
+//helpers
+const isLogin = require("./helpers/isLogin");
 
+app.use(isLogin);
 app.use("/", signIn);
 app.use("/", signUp);
 
