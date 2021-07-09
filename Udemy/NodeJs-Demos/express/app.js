@@ -1,14 +1,21 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 
-// app.set('view engine', 'pug');
-
 const signIn = require("./routes/signin");
+const signUp = require("./routes/signup");
 
-app.use("/",signIn);
+app.use((req, res, next) => {
+  const isLogin = true;  
+  if (isLogin) {
+    next();
+  } else {
+    res.send("Lütfen giriş yapın");
+  }
+});
 
+app.use("/", signIn);
+app.use("/", signUp);
 
-
-app.listen(3000,()=>{
-    console.log("express has ran")
+app.listen(3000, () => {
+  console.log("express has ran");
 });
